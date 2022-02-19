@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  --primary: #0ae8ca;
+  --dark-1: #2d2d2d;
+  --dark-2: #202020;
+  --dark-3: #131313;
+  --dark-4: #000000;
+  --light-1: #ffffff;
+  --light-2: #f9f9f9;
+  --light-3: #ececec;
+  --light-4: #dfdfdf;
+  --danger: #dc3545;
+}
+
+@font-face {
+  font-family: CascadiaCode;
+  src: url("../fonts/CascadiaCode.ttf");
+}
+/* Track */
+/* Handle */
+/* Handle on hover */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+  background: var(--light-3);
+  color: var(--dark-3);
+  font-family: CascadiaCode;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+body p,
+body figure {
+  margin: 0;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+.loader::after {
+  background-color: var(--light-3);
+  height: clamp(30px, 3vw, 50px);
+  width: clamp(30px, 3vw, 50px);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid var(--dark-1);
+  border-top: 2px solid var(--light-3);
+  border-radius: 50%;
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
